@@ -18,11 +18,13 @@ public class Purchase {
 	private Long id;
 
 	@NotNull
-	@Column(name = "user")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id")
 	private User user;
 
 	@NotNull
-	@Column(name = "product")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "product_id")
 	private Product product;
 
 	@NotNull
