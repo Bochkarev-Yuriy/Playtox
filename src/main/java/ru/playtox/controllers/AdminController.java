@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import ru.playtox.models.products.Product;
-import ru.playtox.service.abztract.ProductService;
-import ru.playtox.service.abztract.PurchaseService;
+import ru.playtox.service.abstr.ProductService;
+import ru.playtox.service.abstr.PurchaseService;
 
 @RequestMapping(value = "/admin")
 @Controller

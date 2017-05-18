@@ -3,7 +3,7 @@ package ru.playtox.dao.impl;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.playtox.dao.abztract.RoleDao;
+import ru.playtox.dao.abstr.RoleDao;
 import ru.playtox.models.roles.Role;
 
 @Transactional

@@ -1,4 +1,4 @@
-package ru.playtox.dao.abztract;
+package ru.playtox.dao.abstr;
 
 import ru.playtox.models.purchases.Purchase;
 

@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ru.playtox.models.users.User;
-import ru.playtox.service.abztract.UserService;
+import ru.playtox.service.abstr.UserService;
 
 @Service
 public class AuthenticationService implements UserDetailsService {

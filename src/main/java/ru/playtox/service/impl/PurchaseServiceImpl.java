@@ -2,9 +2,9 @@ package ru.playtox.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.playtox.dao.abztract.PurchaseDao;
+import ru.playtox.dao.abstr.PurchaseDao;
 import ru.playtox.models.purchases.Purchase;
-import ru.playtox.service.abztract.PurchaseService;
+import ru.playtox.service.abstr.PurchaseService;
 
 import java.util.List;
 

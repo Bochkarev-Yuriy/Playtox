@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ru.playtox.models.products.Product;
 import ru.playtox.models.roles.Role;
 import ru.playtox.models.users.User;
-import ru.playtox.service.abztract.ProductService;
-import ru.playtox.service.abztract.RoleService;
-import ru.playtox.service.abztract.UserService;
+import ru.playtox.service.abstr.ProductService;
+import ru.playtox.service.abstr.RoleService;
+import ru.playtox.service.abstr.UserService;
 
 import java.math.BigDecimal;
 import java.util.*;

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ru.playtox.models.roles.Role;
 import ru.playtox.models.users.User;
-import ru.playtox.service.abztract.RoleService;
-import ru.playtox.service.abztract.UserService;
+import ru.playtox.service.abstr.RoleService;
+import ru.playtox.service.abstr.UserService;
 import ru.playtox.service.util.ValidationHelper;
 
 import javax.validation.Valid;

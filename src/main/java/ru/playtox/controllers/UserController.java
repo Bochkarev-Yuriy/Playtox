@@ -9,8 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.playtox.models.products.Product;
 import ru.playtox.models.purchases.Purchase;
 import ru.playtox.models.users.User;
-import ru.playtox.service.abztract.ProductService;
-import ru.playtox.service.abztract.PurchaseService;
+import ru.playtox.service.abstr.ProductService;
+import ru.playtox.service.abstr.PurchaseService;
 
 import java.math.BigDecimal;
 import java.time.Clock;

@@ -1,4 +1,4 @@
-package ru.playtox.service.abztract;
+package ru.playtox.service.abstr;
 
 
 import ru.playtox.models.roles.Role;

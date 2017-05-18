@@ -3,9 +3,9 @@ package ru.playtox.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.playtox.dao.abztract.RoleDao;
+import ru.playtox.dao.abstr.RoleDao;
 import ru.playtox.models.roles.Role;
-import ru.playtox.service.abztract.RoleService;
+import ru.playtox.service.abstr.RoleService;
 import ru.playtox.service.exceptions.NotFoundException;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package ru.playtox.dao.impl;
 
-import ru.playtox.dao.abztract.UserDao;
+import ru.playtox.dao.abstr.UserDao;
 import ru.playtox.models.users.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
