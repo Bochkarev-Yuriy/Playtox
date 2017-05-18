@@ -42,9 +42,9 @@ public class TestDataInitializer {
 		userService.addUser(admin);
 
 //		<---Creating product--->
-		Product book = new Product("Head First Java", "Java Programming", new BigDecimal(199.9), 10);
-		Product lamp = new Product("Lamp", "Book lamp", new BigDecimal(110), 30);
-		Product pencil = new Product("Pencil", "wooden", new BigDecimal(49.99), 1000);
+		Product book = new Product("Head First Java", "Java Programming", new BigDecimal("199.9"), 10);
+		Product lamp = new Product("Lamp", "Book lamp", new BigDecimal("110"), 30);
+		Product pencil = new Product("Pencil", "wooden", new BigDecimal("49.99"), 1000);
 
 //		<---Adding product into a DB--->
 		productService.addProduct(book);

@@ -33,6 +33,10 @@ public class Product {
 	@Column(name = "count", nullable = false)
 	private Integer count;
 
+	@NotNull
+	@Column(name = "available", nullable = false)
+	private boolean isAvailable = true;
+
 	public Product() {
 
 	}
@@ -84,6 +88,14 @@ public class Product {
 		this.count = count;
 	}
 
+	public boolean isAvailable() {
+		return isAvailable;
+	}
+
+	public void setAvailable(boolean available) {
+		isAvailable = available;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -116,6 +128,7 @@ public class Product {
 				", description='" + description + '\'' +
 				", price=" + price +
 				", count=" + count +
+				", isAvailable=" + isAvailable +
 				'}';
 	}
 }

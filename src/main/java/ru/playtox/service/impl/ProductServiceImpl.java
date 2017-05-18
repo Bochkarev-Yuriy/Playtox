@@ -6,7 +6,9 @@ import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.playtox.dao.abstr.ProductDao;
+import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
+import ru.playtox.dao.impl.exceptions.RemoveException;
 import ru.playtox.model.products.Product;
 import ru.playtox.service.abstr.ProductService;
 
@@ -39,7 +41,7 @@ public class ProductServiceImpl implements ProductService {
 			logger.info("Deleted product id=" + id);
 		} catch (HibernateException e) {
 			logger.error("Failed to deleted an product id=" + id);
-			throw new PersistException("Failed to deleted an product", e);
+			throw new RemoveException("Failed to deleted an product", e);
 		}
 	}
 
@@ -50,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
 			logger.info("Update : " + product);
 		} catch (HibernateException e) {
 			logger.error("Failed to update an product " + product);
-			throw new PersistException("Failed to update an product", e);
+			throw new MergeException("Failed to update an product", e);
 		}
 	}
 

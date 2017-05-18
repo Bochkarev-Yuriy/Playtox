@@ -5,7 +5,9 @@ import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.playtox.dao.abstr.PurchaseDao;
+import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
+import ru.playtox.dao.impl.exceptions.RemoveException;
 import ru.playtox.model.purchases.Purchase;
 import ru.playtox.service.abstr.PurchaseService;
 
@@ -47,7 +49,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 			logger.info("Update : " + purchase);
 		} catch (HibernateException e) {
 			logger.error("Failed to update an purchase " + purchase);
-			throw new PersistException("Failed to update an purchase", e);
+			throw new MergeException("Failed to update an purchase", e);
 		}
 	}
 
@@ -58,7 +60,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 			logger.info("Deleted purchase id=" + id);
 		} catch (HibernateException e) {
 			logger.error("Failed to deleted an purchase id=" + id);
-			throw new PersistException("Failed to deleted an purchase", e);
+			throw new RemoveException("Failed to deleted an purchase", e);
 		}
 	}
 }

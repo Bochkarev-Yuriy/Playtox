@@ -1,12 +1,8 @@
 package ru.playtox.dao.impl;
 
 
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.transaction.annotation.Transactional;
-import ru.playtox.dao.impl.exceptions.MergeException;
-import ru.playtox.dao.impl.exceptions.PersistException;
-import ru.playtox.dao.impl.exceptions.RemoveException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -24,7 +20,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	private final Class<T> persistentClass;
 
 	@SuppressWarnings("unchecked")
-	public AbstractDao() {
+	AbstractDao() {
 		this.persistentClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
 	}
 

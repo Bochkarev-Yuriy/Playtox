@@ -3,10 +3,11 @@ package ru.playtox.service.impl;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import ru.playtox.dao.abstr.UserDao;
+import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
+import ru.playtox.dao.impl.exceptions.RemoveException;
 import ru.playtox.model.users.User;
 import ru.playtox.service.abstr.UserService;
-import ru.playtox.service.exceptions.UserDuplicateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +39,7 @@ public class UserServiceImpl implements UserService {
 			logger.info("Deleted user id=" + id);
 		} catch (HibernateException e) {
 			logger.error("Failed to deleted an user id=" + id);
-			throw new PersistException("Failed to deleted an user", e);
+			throw new RemoveException("Failed to deleted an user", e);
 		}
 	}
 
@@ -49,7 +50,7 @@ public class UserServiceImpl implements UserService {
 			logger.info("Update : " + user);
 		} catch (HibernateException e) {
 			logger.error("Failed to update an user " + user);
-			throw new PersistException("Failed to update an user", e);
+			throw new MergeException("Failed to update an user", e);
 		}
 	}
 

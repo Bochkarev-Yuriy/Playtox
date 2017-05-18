@@ -6,7 +6,9 @@ import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.playtox.dao.abstr.RoleDao;
+import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
+import ru.playtox.dao.impl.exceptions.RemoveException;
 import ru.playtox.model.roles.Role;
 import ru.playtox.service.abstr.RoleService;
 import ru.playtox.service.exceptions.NotFoundException;
@@ -55,7 +57,7 @@ public class RoleServiceImpl implements RoleService {
 			logger.info("Update : " + role);
 		} catch (HibernateException e) {
 			logger.error("Failed to update an role " + role);
-			throw new PersistException("Failed to update an role", e);
+			throw new MergeException("Failed to update an role", e);
 		}
 	}
 
@@ -65,7 +67,7 @@ public class RoleServiceImpl implements RoleService {
 			logger.info("Deleted role id=" + id);
 		} catch (HibernateException e) {
 			logger.error("Failed to deleted an role id=" + id);
-			throw new PersistException("Failed to deleted an role", e);
+			throw new RemoveException("Failed to deleted an role", e);
 		}
 	}
 }

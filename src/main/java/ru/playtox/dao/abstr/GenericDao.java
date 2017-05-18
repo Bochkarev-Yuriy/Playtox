@@ -4,7 +4,7 @@ package ru.playtox.dao.abstr;
 import java.io.Serializable;
 import java.util.List;
 
-public interface GenericDao<PK extends Serializable, T> {
+interface GenericDao<PK extends Serializable, T> {
 
 	void persist(T entity);
 
