@@ -33,7 +33,7 @@ public class UserController {
 
 	@GetMapping(value = {"/products"})
 	public ModelAndView getAllProduct() {
-		ModelAndView modelAndView = new ModelAndView("allProductsUser");
+		ModelAndView modelAndView = new ModelAndView("allProductsForUser");
 		modelAndView.addObject("products", productService.getAllProduct());
 		return modelAndView;
 	}
@@ -44,7 +44,6 @@ public class UserController {
 		Integer numbers = Integer.valueOf(number);
 
 		if (numbers > 0) {
-			// TODO если получать готовый обьек со вью, то можно сыкономить на запросе.
 			Product product = productService.getProductById(id);
 			product.setCount(product.getCount() - numbers);
 			productService.updateProduct(product);

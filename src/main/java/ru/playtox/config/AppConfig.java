@@ -14,7 +14,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import ru.playtox.initializer.TestDataInitializer;
+import ru.playtox.config.initializer.TestDataInitializer;
+
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
