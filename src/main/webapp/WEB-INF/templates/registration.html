@@ -1,7 +1,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-    <link th:replace="hello :: link_css"></link>
+    <link th:replace="fragments :: link_css"></link>
     <title>Registration page</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
 
         <input class="btn btn-lg btn-primary btn-block" type="submit" name="add" value="Registration"/>
     </form>
-    <a href="" th:href="@{/hello}">
+    <a href="" th:href="@{/login}">
         <button type="button" class="btn btn-lg btn-primary btn-block" value="Login">Login</button>
     </a>
     <div th:if="${congratulations != null}" style="font-size: 13px">
