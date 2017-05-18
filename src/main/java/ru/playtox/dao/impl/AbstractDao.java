@@ -34,11 +34,12 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	}
 
 	public void update(T entity) {
-		try {
-			entityManager.merge(entity);
-		} catch (HibernateException e) {
-			throw new MergeException("Failed to merge an object", e);
-		}
+		entityManager.merge(entity);
+//		try {
+//			entityManager.merge(entity);
+//		} catch (HibernateException e) {
+//			throw new MergeException("Failed to merge an object", e);
+//		}
 	}
 
 	public List<T> getAllEntity() {
@@ -49,20 +50,22 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	}
 
 	public void persist(T entity) {
-		try {
-			entityManager.persist(entity);
-		} catch (HibernateException e) {
-			throw new PersistException("Failed to add an object", e);
-		}
+		entityManager.persist(entity);
+//		try {
+//			entityManager.persist(entity);
+//		} catch (HibernateException e) {
+//			throw new PersistException("Failed to add an object", e);
+//		}
 	}
 
 	public void deleteByKey(PK pk) {
 		T entity = entityManager.find(persistentClass, pk);
-		try {
-			entityManager.remove(entity);
-		} catch (HibernateException e) {
-			throw new RemoveException("Failed to deleting an object", e);
-		}
+		entityManager.remove(entity);
+//		try {
+//			entityManager.remove(entity);
+//		} catch (HibernateException e) {
+//			throw new RemoveException("Failed to deleting an object", e);
+//		}
 	}
 
 	protected Session getSession() {

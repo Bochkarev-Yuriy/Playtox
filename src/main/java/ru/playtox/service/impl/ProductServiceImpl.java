@@ -1,41 +1,57 @@
 package ru.playtox.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.playtox.dao.abstr.ProductDao;
+import ru.playtox.dao.impl.exceptions.PersistException;
 import ru.playtox.model.products.Product;
 import ru.playtox.service.abstr.ProductService;
 
 import java.util.List;
 
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
-	private static final Logger logger = LoggerFactory.getLogger(Product.class);
+	private final static Logger logger = Logger.getLogger(ProductServiceImpl.class);
 
 	@Autowired
 	private ProductDao productDao;
 
 	@Override
 	public void addProduct(Product product) {
-		productDao.persist(product);
-		logger.info("Added product " + product);
+		try {
+			productDao.persist(product);
+			logger.info("Added : " + product);
+		} catch (HibernateException e) {
+			logger.error("Failed to add an product " + product);
+			throw new PersistException("Failed to add an product", e);
+		}
 	}
 
 	@Override
 	public void deleteProductById(Long id) {
-		productDao.deleteByKey(id);
-		//TODO нужна инфа о продукте
-		logger.info("Deleted product " + id);
+		try {
+			productDao.deleteByKey(id);
+			logger.info("Deleted product id=" + id);
+		} catch (HibernateException e) {
+			logger.error("Failed to deleted an product id=" + id);
+			throw new PersistException("Failed to deleted an product", e);
+		}
 	}
 
 	@Override
 	public void updateProduct(Product product) {
-		productDao.update(product);
-		//TODO нужна старая инфа о продукте
-		logger.info("Updated product " + product);
+		try {
+			productDao.update(product);
+			logger.info("Update : " + product);
+		} catch (HibernateException e) {
+			logger.error("Failed to update an product " + product);
+			throw new PersistException("Failed to update an product", e);
+		}
 	}
 
 	@Override

@@ -1,6 +1,9 @@
 package ru.playtox.service.impl;
 
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import ru.playtox.dao.abstr.UserDao;
+import ru.playtox.dao.impl.exceptions.PersistException;
 import ru.playtox.model.users.User;
 import ru.playtox.service.abstr.UserService;
 import ru.playtox.service.exceptions.UserDuplicateException;
@@ -12,28 +15,42 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
+	private final static Logger logger = Logger.getLogger(UserServiceImpl.class);
+
 	@Autowired
 	private UserDao userDao;
 
 	@Override
 	public void addUser(User user) {
-		String login = user.getUsername();
-
-		if (userDao.getUserByLogin(login) != null) {
-			throw new UserDuplicateException("User '" + login + "' already exists");
+		try {
+			userDao.persist(user);
+			logger.info("Added : " + user);
+		} catch (HibernateException e) {
+			logger.error("Failed to add an user " + user);
+			throw new PersistException("Failed to add an purchase", e);
 		}
-
-		userDao.persist(user);
 	}
 
 	@Override
 	public void deleteUser(Long id) {
-		userDao.deleteByKey(id);
+		try {
+			userDao.deleteByKey(id);
+			logger.info("Deleted user id=" + id);
+		} catch (HibernateException e) {
+			logger.error("Failed to deleted an user id=" + id);
+			throw new PersistException("Failed to deleted an user", e);
+		}
 	}
 
 	@Override
 	public void updateUser(User user) {
-		userDao.update(user);
+		try {
+			userDao.update(user);
+			logger.info("Update : " + user);
+		} catch (HibernateException e) {
+			logger.error("Failed to update an user " + user);
+			throw new PersistException("Failed to update an user", e);
+		}
 	}
 
 	@Override
