@@ -1,15 +1,16 @@
-package ru.playtox.initializer;
+package ru.playtox.config.initializer;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.playtox.models.products.Product;
-import ru.playtox.models.roles.Role;
-import ru.playtox.models.users.User;
+import ru.playtox.model.products.Product;
+import ru.playtox.model.roles.Role;
+import ru.playtox.model.users.User;
 import ru.playtox.service.abstr.ProductService;
 import ru.playtox.service.abstr.RoleService;
 import ru.playtox.service.abstr.UserService;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TestDataInitializer {
 

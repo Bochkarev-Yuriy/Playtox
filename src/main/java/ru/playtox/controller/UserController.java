@@ -1,4 +1,4 @@
-package ru.playtox.controllers;
+package ru.playtox.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,9 +6,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import ru.playtox.models.products.Product;
-import ru.playtox.models.purchases.Purchase;
-import ru.playtox.models.users.User;
+import ru.playtox.model.products.Product;
+import ru.playtox.model.purchases.Purchase;
+import ru.playtox.model.users.User;
 import ru.playtox.service.abstr.ProductService;
 import ru.playtox.service.abstr.PurchaseService;
 
@@ -26,7 +26,7 @@ public class UserController {
 	@Autowired
 	private PurchaseService purchaseService;
 
-	@GetMapping(value = "")
+	@GetMapping()
 	public ModelAndView getUserIndexPage() {
 		return new ModelAndView("user");
 	}
