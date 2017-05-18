@@ -25,7 +25,7 @@ import java.util.Map;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({"ru"})
+@ComponentScan("ru.playtox")
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:hibernate.properties"})
 public class AppConfig {
@@ -68,7 +68,7 @@ public class AppConfig {
 	}
 
 	private Map<String, ?> hibernateJpaProperties() {
-		HashMap<String, String> properties = new HashMap<String, String>();
+		Map<String, String> properties = new HashMap<>();
 		properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
 		properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
 		properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));

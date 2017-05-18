@@ -3,7 +3,7 @@ package ru.playtox.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.playtox.dao.abstr.PurchaseDao;
-import ru.playtox.models.purchases.Purchase;
+import ru.playtox.model.purchases.Purchase;
 import ru.playtox.service.abstr.PurchaseService;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 public class PurchaseServiceImpl implements PurchaseService {
 
 	@Autowired
-	PurchaseDao purchaseDao;
+	private PurchaseDao purchaseDao;
 
 	@Override
 	public void addPurchase(Purchase purchase) {

@@ -4,7 +4,7 @@ package ru.playtox.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.playtox.dao.abstr.RoleDao;
-import ru.playtox.models.roles.Role;
+import ru.playtox.model.roles.Role;
 import ru.playtox.service.abstr.RoleService;
 import ru.playtox.service.exceptions.NotFoundException;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class RoleServiceImpl implements RoleService {
 
 	@Autowired
-	RoleDao roleDao;
+	private RoleDao roleDao;
 
 	public void addRole(Role role) {
 		roleDao.persist(role);

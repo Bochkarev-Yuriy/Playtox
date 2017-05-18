@@ -1,7 +1,7 @@
 package ru.playtox.service.impl;
 
 import ru.playtox.dao.abstr.UserDao;
-import ru.playtox.models.users.User;
+import ru.playtox.model.users.User;
 import ru.playtox.service.abstr.UserService;
 import ru.playtox.service.exceptions.UserDuplicateException;
 import org.springframework.beans.factory.annotation.Autowired;

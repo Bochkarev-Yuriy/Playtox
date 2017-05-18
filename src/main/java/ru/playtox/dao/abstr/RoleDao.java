@@ -1,7 +1,7 @@
 package ru.playtox.dao.abstr;
 
 
-import ru.playtox.models.roles.Role;
+import ru.playtox.model.roles.Role;
 
 public interface RoleDao extends GenericDao<Long, Role> {
 

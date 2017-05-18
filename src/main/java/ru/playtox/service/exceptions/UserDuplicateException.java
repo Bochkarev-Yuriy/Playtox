@@ -1,6 +1,6 @@
 package ru.playtox.service.exceptions;
 
-import ru.playtox.models.users.User;
+import ru.playtox.model.users.User;
 import ru.playtox.service.impl.UserServiceImpl;
 
 /**

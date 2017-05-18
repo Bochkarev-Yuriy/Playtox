@@ -1,7 +1,7 @@
 package ru.playtox.service.abstr;
 
 
-import ru.playtox.models.purchases.Purchase;
+import ru.playtox.model.purchases.Purchase;
 
 import java.util.List;
 
