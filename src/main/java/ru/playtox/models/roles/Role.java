@@ -15,18 +15,9 @@ public class Role implements GrantedAuthority {
 	@Column(name = "name", length = 20, nullable = false)
 	private String name;
 
-	@Column
-	private Boolean isAvailable = true;
 
 	public Role() {
-	}
 
-	public Boolean getAvailable() {
-		return isAvailable;
-	}
-
-	public void setAvailable(Boolean available) {
-		isAvailable = available;
 	}
 
 	public Role(String name) {
@@ -49,11 +40,6 @@ public class Role implements GrantedAuthority {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "Role with id " + id + " and name " + name;
-	}
-
 	public String getAuthority() {
 		return name;
 	}
@@ -71,5 +57,10 @@ public class Role implements GrantedAuthority {
 	@Override
 	public int hashCode() {
 		return name != null ? name.hashCode() : 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Role with id " + id + " and name " + name;
 	}
 }

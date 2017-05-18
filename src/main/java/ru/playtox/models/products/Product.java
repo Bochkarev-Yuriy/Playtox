@@ -4,6 +4,7 @@ package ru.playtox.models.products;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "products")
@@ -15,18 +16,18 @@ public class Product {
 	private Long id;
 
 	@NotNull
-	@Size(min = 4, max = 30)
+	@Size(min = 2, max = 30)
 	@Column(name = "name", length = 30, nullable = false)
 	private String name;
 
 
-	@Size(min = 4, max = 30)
-	@Column(name = "description", length = 30, nullable = false)
+	@Size(max = 3000)
+	@Column(name = "description", length = 3000, nullable = false)
 	private String description;
 
 	@NotNull
 	@Column(name = "price", nullable = false)
-	private Long price;
+	private BigDecimal price;
 
 	@NotNull
 	@Column(name = "count", nullable = false)
@@ -36,7 +37,7 @@ public class Product {
 
 	}
 
-	public Product(String name, String description, Long price, Integer count) {
+	public Product(String name, String description, BigDecimal price, Integer count) {
 		this.name = name;
 		this.description = description;
 		this.price = price;
@@ -67,15 +68,15 @@ public class Product {
 		this.description = description;
 	}
 
-	public Long getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(Long price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
-	public Integer getCount() {
+	public int getCount() {
 		return count;
 	}
 
