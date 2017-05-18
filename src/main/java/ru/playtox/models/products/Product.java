@@ -76,7 +76,7 @@ public class Product {
 		this.price = price;
 	}
 
-	public int getCount() {
+	public Integer getCount() {
 		return count;
 	}
 

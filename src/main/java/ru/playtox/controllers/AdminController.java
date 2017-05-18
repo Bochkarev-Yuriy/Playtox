@@ -33,26 +33,26 @@ public class AdminController {
 		return modelAndView;
 	}
 
-	@GetMapping(value = "/product/add")
+	@GetMapping(value = "/products/add")
 	public ModelAndView addProductsGet() {
 		ModelAndView modelAndView = new ModelAndView("addProduct");
 		modelAndView.addObject("product", new Product());
 		return modelAndView;
 	}
 
-	@PostMapping(value = "/product/add")
+	@PostMapping(value = "/products/add")
 	public String addProductsPost(Product product) {
 		productService.addProduct(product);
 		return "redirect:/admin/products";
 	}
 
-	@GetMapping(value = "/product/{id}/delete")
+	@GetMapping(value = "/products/{id}/delete")
 	public String deleteProductsGet(@PathVariable("id") Long id) {
 		productService.deleteProductById(id);
 		return "redirect:/admin/products";
 	}
 
-	@GetMapping(value = "/product/{id}/update")
+	@GetMapping(value = "/products/{id}/update")
 	public ModelAndView updateProductsGet(@PathVariable("id") Long id) {
 		Product product = productService.getProductById(id);
 		ModelAndView modelAndView = new ModelAndView("updateProduct");
@@ -60,7 +60,7 @@ public class AdminController {
 		return modelAndView;
 	}
 
-	@PostMapping(value = "/product/{id}/update")
+	@PostMapping(value = "/products/{id}/update")
 	public String updateProductsPost(@PathVariable("id") Long id, Product product) {
 		product.setId(id);
 		productService.updateProduct(product);

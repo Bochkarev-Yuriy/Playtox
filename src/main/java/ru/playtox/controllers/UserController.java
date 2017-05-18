@@ -38,7 +38,7 @@ public class UserController {
 		return modelAndView;
 	}
 
-	@PostMapping(value = {"/product/{id}/buy"})
+	@PostMapping(value = {"/products/{id}/buy"})
 	public String buyProduct(@RequestParam(value = "number", required = false) String number, @PathVariable("id") Long id) {
 		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Integer numbers = Integer.valueOf(number);

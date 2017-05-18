@@ -11,7 +11,7 @@
     <div class="row">
         <h1 class="page-header">Update product</h1>
         <div class="table-responsive">
-            <form th:action="@{/admin/product/__${product.id}__/update}" th:method="post" th:object="${product}">
+            <form th:action="@{/admin/products/__${product.id}__/update}" th:method="post" th:object="${product}">
                 <table class="table table-striped">
                     <tr>
                         <td>Name</td>

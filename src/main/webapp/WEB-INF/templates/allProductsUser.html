@@ -21,7 +21,7 @@
                     <td><b>Buy</b></td>
                 </tr>
                 <tr th:each="product : ${products}">
-                    <form th:action="@{/user/product/__${product.id}__/buy}" th:method="post">
+                    <form th:action="@{/user/products/__${product.id}__/buy}" th:method="post">
                         <td th:text="${product.name}">Name</td>
                         <td th:text="${product.description}">Description</td>
                         <td th:text="${product.price}">Price</td>
