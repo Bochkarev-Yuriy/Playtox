@@ -1,4 +1,4 @@
-package ru.playtox.models.products;
+package ru.playtox.model.products;
 
 
 import javax.persistence.*;

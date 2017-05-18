@@ -1,4 +1,4 @@
-package ru.playtox.controllers;
+package ru.playtox.controller;
 
 
 import org.springframework.security.core.Authentication;

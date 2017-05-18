@@ -1,4 +1,4 @@
-package ru.playtox.controllers;
+package ru.playtox.controller;
 
 
 import org.springframework.security.core.Authentication;
@@ -6,8 +6,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
-import ru.playtox.models.roles.Role;
-import ru.playtox.models.users.User;
+import ru.playtox.model.roles.Role;
+import ru.playtox.model.users.User;
 
 @Controller
 public class HelloController {
