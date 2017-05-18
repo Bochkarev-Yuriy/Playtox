@@ -1,7 +1,7 @@
-package ru.playtox.models.purchases;
+package ru.playtox.model.purchases;
 
-import ru.playtox.models.products.Product;
-import ru.playtox.models.users.User;
+import ru.playtox.model.products.Product;
+import ru.playtox.model.users.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

@@ -1,4 +1,4 @@
-package ru.playtox.models.roles;
+package ru.playtox.model.roles;
 
 import org.springframework.security.core.GrantedAuthority;
 

@@ -1,4 +1,4 @@
-package ru.playtox.controllers;
+package ru.playtox.controller;
 
 
 import org.slf4j.Logger;
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import ru.playtox.models.roles.Role;
-import ru.playtox.models.users.User;
+import ru.playtox.model.roles.Role;
+import ru.playtox.model.users.User;
 import ru.playtox.service.abstr.RoleService;
 import ru.playtox.service.abstr.UserService;
-import ru.playtox.service.util.ValidationHelper;
+import ru.playtox.util.PasswordValidator;
 
 import javax.validation.Valid;
 import java.util.*;
@@ -47,7 +47,7 @@ public class RegistrationController {
 		model.addObject("user", userFromPage);
 
 		boolean isConfEqualToPass =
-				ValidationHelper.checkConfEqualToPass(userFromPage.getPassword(), confirmPassword);
+				PasswordValidator.validatePassword(userFromPage.getPassword(), confirmPassword);
 		if (bindingResult.hasErrors()) {
 			return model;
 		} else if (!isConfEqualToPass) {

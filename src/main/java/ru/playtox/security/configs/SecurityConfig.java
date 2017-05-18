@@ -1,4 +1,4 @@
-package ru.playtox.config.security.configs;
+package ru.playtox.security.configs;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import ru.playtox.config.security.security.AuthenticationService;
+import ru.playtox.security.service.AuthenticationService;
 
 
 @Configuration
