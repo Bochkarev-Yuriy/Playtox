@@ -1,4 +1,4 @@
-package ru.playtox.controllers;
+package ru.playtox.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import ru.playtox.models.products.Product;
+import ru.playtox.model.products.Product;
 import ru.playtox.service.abstr.ProductService;
 import ru.playtox.service.abstr.PurchaseService;
 
@@ -21,7 +21,7 @@ public class AdminController {
 	@Autowired
 	private PurchaseService purchaseService;
 
-	@GetMapping(value = "")
+	@GetMapping()
 	public ModelAndView getAdminIndexPage() {
 		return new ModelAndView("admin");
 	}
