@@ -43,8 +43,6 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 	public void deleteRoleById(Long id) {
-		Role role = roleDao.getEntityByKey(id);
-		role.setAvailable(false);
-		roleDao.update(role);
+		roleDao.deleteByKey(id);
 	}
 }
