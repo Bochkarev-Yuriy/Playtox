@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add product</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:replace="hello :: link_css"></link>
+</head>
+<body>
+
+<th:block th:replace="hello :: header-panel"></th:block>
+
+<div class="container">
+    <div class="row">
+        <h1 class="page-header">Add product</h1>
+        <div class="table-responsive">
+            <form th:action="@{/admin/product/add}" th:method="post" th:object="${product}">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input type="text" th:field="*{name}" required="required" placeholder="*name"
+                                   size="45" minlength="2" maxlength="30"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td><textarea cols="46" rows="6" th:field="*{description}" maxlength="3000"/></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input type="text" th:field="*{price}" required="required" placeholder="*price" size="45"/></td>
+                    </tr>
+                    <tr>
+                        <td>Count</td>
+                        <td><input type="text" th:field="*{count}" placeholder="*count" size="45"/></td>
+                    </tr>
+                </table>
+                <button type="submit" class="btn btn-lg btn-success">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
