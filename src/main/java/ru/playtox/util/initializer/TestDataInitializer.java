@@ -35,6 +35,7 @@ public class TestDataInitializer {
 
 //		<---Creating users--->
 		Set<Role> roleListAdmin = new HashSet();
+		roleListAdmin.add(roleUser);
 		roleListAdmin.add(roleAdmin);
 		User admin = new User("admin@mail.ru", "admin", roleListAdmin);
 
@@ -51,5 +52,4 @@ public class TestDataInitializer {
 		productService.addProduct(lamp);
 		productService.addProduct(pencil);
 	}
-
 }
