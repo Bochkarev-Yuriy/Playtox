@@ -6,14 +6,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import ru.playtox.model.roles.Role;
 import ru.playtox.util.validation.ValidationPattern;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.Set;
-
 
 @Entity
 @Table(name = "users")
@@ -43,7 +41,6 @@ public class User implements UserDetails {
 	private Set<Role> roles;
 
 	public User() {
-
 	}
 
 	public User(String email, String password, Set<Role> roles) {

@@ -1,4 +1,4 @@
-package ru.playtox.config.initializer;
+package ru.playtox.util.initializer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.playtox.model.products.Product;

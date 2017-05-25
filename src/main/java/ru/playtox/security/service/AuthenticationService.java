@@ -1,6 +1,5 @@
 package ru.playtox.security.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +20,6 @@ public class AuthenticationService implements UserDetailsService {
 		if (user == null) {
 			throw new UsernameNotFoundException("Username " + username + " not found");
 		}
-
 		return user;
 	}
 }

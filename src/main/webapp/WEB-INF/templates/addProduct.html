@@ -28,11 +28,12 @@
                     </tr>
                     <tr>
                         <td>Price</td>
-                        <td><input type="text" th:field="*{price}" required="required" placeholder="*price" size="45"/></td>
+                        <td><input type="number" step="any" th:field="*{price}" required="required" placeholder="*price"
+                                   size="45"/></td>
                     </tr>
                     <tr>
                         <td>Count</td>
-                        <td><input type="text" th:field="*{count}" placeholder="*count" size="45"/></td>
+                        <td><input type="number" th:field="*{count}" placeholder="*count" size="45"/></td>
                     </tr>
                 </table>
                 <button type="submit" class="btn btn-lg btn-success">Add</button>

@@ -8,7 +8,6 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Service;
 import ru.playtox.model.roles.Role;
-import ru.playtox.service.impl.RoleServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,21 +21,19 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
-
 	public void onAuthenticationSuccess(HttpServletRequest request,
 										HttpServletResponse response, Authentication authentication) throws IOException {
 		handle(request, response, authentication);
 	}
 
 	private void handle(HttpServletRequest request,
-						  HttpServletResponse response, Authentication authentication) throws IOException {
+						HttpServletResponse response, Authentication authentication) throws IOException {
 		String targetUrl = determineTargetUrl(authentication);
 
 		if (response.isCommitted()) {
 			logger.debug("Response has already been committed. Unable to redirect to " + targetUrl);
 			return;
 		}
-
 		redirectStrategy.sendRedirect(request, response, targetUrl);
 	}
 

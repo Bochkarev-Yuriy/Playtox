@@ -1,6 +1,5 @@
 package ru.playtox.config;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,15 +13,12 @@ import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import ru.playtox.config.initializer.TestDataInitializer;
-
+import ru.playtox.util.initializer.TestDataInitializer;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-
 import java.util.HashMap;
 import java.util.Map;
-
 
 @EnableWebMvc
 @Configuration
@@ -33,7 +29,6 @@ public class AppConfig {
 
 	@Autowired
 	private Environment environment;
-
 
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
@@ -55,7 +50,6 @@ public class AppConfig {
 		dataSource.setUrl(environment.getRequiredProperty("hibernate.connection.url"));
 		dataSource.setUsername(environment.getRequiredProperty("hibernate.connection.username"));
 		dataSource.setPassword(environment.getRequiredProperty("hibernate.connection.password"));
-
 
 		return dataSource;
 	}

@@ -1,6 +1,5 @@
 package ru.playtox.controller;
 
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class LoginController {
 
-
 	@RequestMapping(value = {"/login"}, method = RequestMethod.GET)
 	public ModelAndView getLoginForm(HttpServletRequest request,
 									 HttpServletResponse response,
@@ -27,7 +25,6 @@ public class LoginController {
 		if (error != null) {
 			model.addObject("error", "Invalid username and password!");
 		}
-
 		if (logout != null) {
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			if (auth != null) {

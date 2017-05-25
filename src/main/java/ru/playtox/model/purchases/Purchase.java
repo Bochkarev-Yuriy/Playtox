@@ -40,7 +40,6 @@ public class Purchase {
 	private Integer countOfPurchase;
 
 	public Purchase() {
-
 	}
 
 	public Purchase(User user, Product product, LocalDate dateOfPurchase, BigDecimal priceOfPurchase, Integer countOfPurchase) {

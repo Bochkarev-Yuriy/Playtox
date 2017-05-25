@@ -1,6 +1,5 @@
 package ru.playtox.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -51,8 +50,6 @@ public class UserController {
 			purchaseService.addPurchase(
 					new Purchase(user, product, LocalDate.now(Clock.systemUTC()), total, numbers));
 		}
-
 		return "redirect:/user/products";
 	}
-
 }

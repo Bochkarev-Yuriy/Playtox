@@ -1,6 +1,5 @@
 package ru.playtox.dao.abstr;
 
-
 import java.io.Serializable;
 import java.util.List;
 

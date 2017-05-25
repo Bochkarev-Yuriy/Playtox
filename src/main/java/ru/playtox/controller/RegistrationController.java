@@ -1,6 +1,5 @@
 package ru.playtox.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -20,13 +19,11 @@ import java.util.*;
 @Controller
 public class RegistrationController {
 
-
 	@Autowired
 	private UserService userService;
 
 	@Autowired
 	private RoleService roleService;
-
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public ModelAndView saveNewUser() {
@@ -39,20 +36,22 @@ public class RegistrationController {
 	public ModelAndView getRegistrationForm(@RequestParam(value = "confirmPassword") String confirmPassword,
 											@Valid User userFromPage, BindingResult bindingResult) {
 
-
 		ModelAndView model = new ModelAndView("registration");
 		model.addObject("user", userFromPage);
 
 		boolean isConfEqualToPass =
 				PasswordValidator.validatePassword(userFromPage.getPassword(), confirmPassword);
+
 		if (bindingResult.hasErrors()) {
 			return model;
 		} else if (!isConfEqualToPass) {
 			model.addObject("errorConfirm", "Error confirm pass");
 			return model;
 		}
+
 		String username = userFromPage.getUsername();
 		boolean isUser = userService.getUserByUsername(username) != null;
+
 		if (isUser) {
 			model.addObject("errorEmail", "Duplicate email");
 			return model;
@@ -64,7 +63,6 @@ public class RegistrationController {
 			userService.addUser(userFromPage);
 			model.addObject("congratulations", "registration completed successfully");
 		}
-
 		return model;
 	}
 }

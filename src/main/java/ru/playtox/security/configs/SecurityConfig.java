@@ -13,7 +13,6 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import ru.playtox.security.handlers.CustomAuthenticationSuccessHandler;
 import ru.playtox.security.service.AuthenticationService;
 
-
 @Configuration
 @ComponentScan("ru.playtox")
 @EnableWebSecurity
@@ -25,7 +24,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
-
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

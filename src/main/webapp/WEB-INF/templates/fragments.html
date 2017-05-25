@@ -26,7 +26,7 @@
                         </a>
                     </li>
                     <li sec:authorize="hasAuthority('ADMIN')">
-                        <a href="/admin/products" th:text="products">Admin products</a>
+                        <a href="/admin/products" th:text="edit_products">Admin products</a>
                     </li>
                     <li sec:authorize="hasAuthority('ADMIN')">
                         <a href="/admin/purchases" th:text="purchases">Admin purchases</a>

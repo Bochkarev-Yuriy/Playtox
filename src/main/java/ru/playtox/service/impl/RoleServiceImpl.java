@@ -1,6 +1,5 @@
 package ru.playtox.service.impl;
 
-
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,6 @@ public class RoleServiceImpl implements RoleService {
 		if (roleFromDB == null) {
 			throw new NotFoundException("The role is not found.");
 		}
-
 		return roleFromDB;
 	}
 

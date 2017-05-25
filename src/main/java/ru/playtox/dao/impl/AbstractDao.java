@@ -1,6 +1,5 @@
 package ru.playtox.dao.impl;
 
-
 import org.hibernate.Session;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +11,6 @@ import java.util.List;
 
 @Transactional
 public abstract class AbstractDao<PK extends Serializable, T> {
-
 
 	@PersistenceContext
 	EntityManager entityManager;

@@ -1,5 +1,6 @@
 package ru.playtox.model.products;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,6 @@ public class Product {
 	@Column(name = "name", length = 30, nullable = false)
 	private String name;
 
-
 	@Size(max = 3000)
 	@Column(name = "description", length = 3000, nullable = false)
 	private String description;
@@ -33,12 +33,12 @@ public class Product {
 	@Column(name = "count", nullable = false)
 	private Integer count;
 
+	@JsonIgnore
 	@NotNull
 	@Column(name = "available", nullable = false)
-	private boolean isAvailable = true;
+	private Boolean isAvailable = true;
 
 	public Product() {
-
 	}
 
 	public Product(String name, String description, BigDecimal price, Integer count) {
@@ -88,11 +88,11 @@ public class Product {
 		this.count = count;
 	}
 
-	public boolean isAvailable() {
+	public Boolean isAvailable() {
 		return isAvailable;
 	}
 
-	public void setAvailable(boolean available) {
+	public void setAvailable(Boolean available) {
 		isAvailable = available;
 	}
 

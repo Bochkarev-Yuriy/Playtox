@@ -73,5 +73,4 @@ public class AdminController {
 		modelAndView.addObject("purchases", purchaseService.getAllPurchase());
 		return modelAndView;
 	}
-
 }

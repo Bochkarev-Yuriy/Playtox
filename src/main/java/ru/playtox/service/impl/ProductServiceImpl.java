@@ -1,6 +1,5 @@
 package ru.playtox.service.impl;
 
-
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import ru.playtox.model.products.Product;
 import ru.playtox.service.abstr.ProductService;
 
 import java.util.List;
-
 
 @Service
 public class ProductServiceImpl implements ProductService {

@@ -1,6 +1,5 @@
 package ru.playtox.dao.impl.exceptions;
 
-
 import ru.playtox.dao.impl.AbstractDao;
 
 import java.io.Serializable;

@@ -7,7 +7,6 @@ import ru.playtox.model.products.Product;
 
 import java.util.List;
 
-
 @Transactional
 @Repository
 public class ProductDaoImpl extends AbstractDao<Long, Product> implements ProductDao {

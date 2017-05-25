@@ -7,6 +7,7 @@ package ru.playtox.service.exceptions;
  * @see {@link ru.playtox.service.impl.RoleServiceImpl#getRoleByRoleName(String)}
  */
 public class NotFoundException extends RuntimeException {
+
 	/**
 	 * Constructor a NotFoundException using the given exception message.
 	 *
