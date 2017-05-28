@@ -1,6 +1,6 @@
 package ru.playtox.service.abstr;
 
-import ru.playtox.model.users.User;
+import ru.playtox.model.User;
 
 import java.util.List;
 

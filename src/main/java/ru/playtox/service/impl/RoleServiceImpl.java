@@ -8,7 +8,7 @@ import ru.playtox.dao.abstr.RoleDao;
 import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
 import ru.playtox.dao.impl.exceptions.RemoveException;
-import ru.playtox.model.roles.Role;
+import ru.playtox.model.Role;
 import ru.playtox.service.abstr.RoleService;
 import ru.playtox.service.exceptions.NotFoundException;
 

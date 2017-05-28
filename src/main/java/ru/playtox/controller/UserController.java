@@ -5,9 +5,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import ru.playtox.model.products.Product;
-import ru.playtox.model.purchases.Purchase;
-import ru.playtox.model.users.User;
+import ru.playtox.model.Product;
+import ru.playtox.model.Purchase;
+import ru.playtox.model.User;
 import ru.playtox.service.abstr.ProductService;
 import ru.playtox.service.abstr.PurchaseService;
 

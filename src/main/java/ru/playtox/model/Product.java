@@ -1,4 +1,4 @@
-package ru.playtox.model.products;
+package ru.playtox.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

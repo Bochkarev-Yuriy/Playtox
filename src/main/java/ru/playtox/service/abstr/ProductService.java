@@ -1,6 +1,6 @@
 package ru.playtox.service.abstr;
 
-import ru.playtox.model.products.Product;
+import ru.playtox.model.Product;
 
 import java.util.List;
 

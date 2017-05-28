@@ -1,9 +1,8 @@
-package ru.playtox.model.users;
+package ru.playtox.model;
 
 import org.hibernate.validator.constraints.Email;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.playtox.model.roles.Role;
 import ru.playtox.util.validation.ValidationPattern;
 
 import javax.persistence.*;

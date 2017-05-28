@@ -8,7 +8,7 @@ import ru.playtox.dao.abstr.PurchaseDao;
 import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
 import ru.playtox.dao.impl.exceptions.RemoveException;
-import ru.playtox.model.purchases.Purchase;
+import ru.playtox.model.Purchase;
 import ru.playtox.service.abstr.PurchaseService;
 
 import java.util.List;

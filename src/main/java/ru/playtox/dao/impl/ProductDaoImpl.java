@@ -3,7 +3,7 @@ package ru.playtox.dao.impl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.playtox.dao.abstr.ProductDao;
-import ru.playtox.model.products.Product;
+import ru.playtox.model.Product;
 
 import java.util.List;
 

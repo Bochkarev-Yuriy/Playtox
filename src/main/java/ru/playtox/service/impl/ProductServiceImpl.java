@@ -8,7 +8,7 @@ import ru.playtox.dao.abstr.ProductDao;
 import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
 import ru.playtox.dao.impl.exceptions.RemoveException;
-import ru.playtox.model.products.Product;
+import ru.playtox.model.Product;
 import ru.playtox.service.abstr.ProductService;
 
 import java.util.List;

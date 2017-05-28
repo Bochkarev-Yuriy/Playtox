@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.playtox.model.users.User;
+import ru.playtox.model.User;
 import ru.playtox.service.abstr.UserService;
 
 @Service

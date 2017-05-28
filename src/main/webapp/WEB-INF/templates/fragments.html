@@ -20,19 +20,14 @@
         <div class="container">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/index" text="Home">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
+                    <li sec:authorize="hasAuthority('ADMIN')">
+                        <a href="/admin/products" text="Edit products">Edit products</a>
                     </li>
                     <li sec:authorize="hasAuthority('ADMIN')">
-                        <a href="/admin/products" th:text="edit_products">Admin products</a>
-                    </li>
-                    <li sec:authorize="hasAuthority('ADMIN')">
-                        <a href="/admin/purchases" th:text="purchases">Admin purchases</a>
+                        <a href="/admin/purchases" th:text="Purchases">Purchases</a>
                     </li>
                     <li sec:authorize="hasAuthority('USER')">
-                        <a href="/user/products" th:text="products">User products</a>
+                        <a href="/user/products" th:text="Products">Products</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

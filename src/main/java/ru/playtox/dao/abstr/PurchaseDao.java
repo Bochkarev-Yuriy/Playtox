@@ -1,6 +1,6 @@
 package ru.playtox.dao.abstr;
 
-import ru.playtox.model.purchases.Purchase;
+import ru.playtox.model.Purchase;
 
 public interface PurchaseDao extends GenericDao<Long, Purchase> {
 

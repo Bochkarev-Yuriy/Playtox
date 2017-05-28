@@ -3,7 +3,7 @@ package ru.playtox.dao.impl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.playtox.dao.abstr.PurchaseDao;
-import ru.playtox.model.purchases.Purchase;
+import ru.playtox.model.Purchase;
 
 @Transactional
 @Repository

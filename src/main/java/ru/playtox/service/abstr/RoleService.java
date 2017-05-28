@@ -1,6 +1,6 @@
 package ru.playtox.service.abstr;
 
-import ru.playtox.model.roles.Role;
+import ru.playtox.model.Role;
 
 import java.util.List;
 

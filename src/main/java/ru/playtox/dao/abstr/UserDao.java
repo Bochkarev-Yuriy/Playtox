@@ -1,6 +1,6 @@
 package ru.playtox.dao.abstr;
 
-import ru.playtox.model.users.User;
+import ru.playtox.model.User;
 
 public interface UserDao extends GenericDao<Long, User> {
 

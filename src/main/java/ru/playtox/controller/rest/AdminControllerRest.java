@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.playtox.model.products.Product;
+import ru.playtox.model.Product;
+import ru.playtox.model.Purchase;
 import ru.playtox.service.abstr.ProductService;
+import ru.playtox.service.abstr.PurchaseService;
 
 import java.util.List;
 
@@ -15,6 +17,9 @@ public class AdminControllerRest {
 
 	@Autowired
 	private ProductService productService;
+
+	@Autowired
+	private PurchaseService purchaseService;
 
 	@GetMapping(value = "/products/{productId}")
 	public ResponseEntity<Product> getProductById(@PathVariable Long productId) {
@@ -62,5 +67,11 @@ public class AdminControllerRest {
 			return new ResponseEntity<>(HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+
+	@GetMapping(value = "/purchases")
+	public ResponseEntity<List<Purchase>> allpurchasesGet() {
+		List<Purchase> purchases = purchaseService.getAllPurchase();
+		return new ResponseEntity<>(purchases, purchases != null ? HttpStatus.OK : HttpStatus.NO_CONTENT);
 	}
 }

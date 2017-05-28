@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import ru.playtox.model.products.Product;
+import ru.playtox.model.Product;
 import ru.playtox.service.abstr.ProductService;
 import ru.playtox.service.abstr.PurchaseService;
 

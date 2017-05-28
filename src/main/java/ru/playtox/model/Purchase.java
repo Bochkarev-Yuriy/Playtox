@@ -1,7 +1,4 @@
-package ru.playtox.model.purchases;
-
-import ru.playtox.model.products.Product;
-import ru.playtox.model.users.User;
+package ru.playtox.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -28,26 +25,26 @@ public class Purchase {
 	private Product product;
 
 	@NotNull
-	@Column(name = "dateOfPurchase")
-	private LocalDate dateOfPurchase;
+	@Column(name = "date")
+	private LocalDate date;
 
 	@NotNull
-	@Column(name = "priceOfPurchase")
-	private BigDecimal priceOfPurchase;
+	@Column(name = "totalPrice")
+	private BigDecimal totalPrice;
 
 	@NotNull
-	@Column(name = "countOfPurchase")
-	private Integer countOfPurchase;
+	@Column(name = "count")
+	private Integer count;
 
 	public Purchase() {
 	}
 
-	public Purchase(User user, Product product, LocalDate dateOfPurchase, BigDecimal priceOfPurchase, Integer countOfPurchase) {
+	public Purchase(User user, Product product, LocalDate date, BigDecimal totalPrice, Integer count) {
 		this.user = user;
 		this.product = product;
-		this.dateOfPurchase = dateOfPurchase;
-		this.priceOfPurchase = priceOfPurchase;
-		this.countOfPurchase = countOfPurchase;
+		this.date = date;
+		this.totalPrice = totalPrice;
+		this.count = count;
 	}
 
 	public Long getId() {
@@ -74,28 +71,28 @@ public class Purchase {
 		this.product = product;
 	}
 
-	public LocalDate getDateOfPurchase() {
-		return dateOfPurchase;
+	public LocalDate getDate() {
+		return date;
 	}
 
-	public void setDateOfPurchase(LocalDate dateOfPurchase) {
-		this.dateOfPurchase = dateOfPurchase;
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
-	public BigDecimal getPriceOfPurchase() {
-		return priceOfPurchase;
+	public BigDecimal getTotalPrice() {
+		return totalPrice;
 	}
 
-	public void setPriceOfPurchase(BigDecimal priceOfPurchase) {
-		this.priceOfPurchase = priceOfPurchase;
+	public void setTotalPrice(BigDecimal totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 
-	public Integer getCountOfPurchase() {
-		return countOfPurchase;
+	public Integer getCount() {
+		return count;
 	}
 
-	public void setCountOfPurchase(Integer countOfPurchase) {
-		this.countOfPurchase = countOfPurchase;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	@Override
@@ -108,11 +105,11 @@ public class Purchase {
 		if (id != null ? !id.equals(purchase.id) : purchase.id != null) return false;
 		if (user != null ? !user.equals(purchase.user) : purchase.user != null) return false;
 		if (product != null ? !product.equals(purchase.product) : purchase.product != null) return false;
-		if (dateOfPurchase != null ? !dateOfPurchase.equals(purchase.dateOfPurchase) : purchase.dateOfPurchase != null)
+		if (date != null ? !date.equals(purchase.date) : purchase.date != null)
 			return false;
-		if (countOfPurchase != null ? !countOfPurchase.equals(purchase.countOfPurchase) : purchase.countOfPurchase != null)
+		if (count != null ? !count.equals(purchase.count) : purchase.count != null)
 			return false;
-		return priceOfPurchase != null ? priceOfPurchase.equals(purchase.priceOfPurchase) : purchase.priceOfPurchase == null;
+		return totalPrice != null ? totalPrice.equals(purchase.totalPrice) : purchase.totalPrice == null;
 	}
 
 	@Override
@@ -120,9 +117,9 @@ public class Purchase {
 		int result = id != null ? id.hashCode() : 0;
 		result = 31 * result + (user != null ? user.hashCode() : 0);
 		result = 31 * result + (product != null ? product.hashCode() : 0);
-		result = 31 * result + (dateOfPurchase != null ? dateOfPurchase.hashCode() : 0);
-		result = 31 * result + (countOfPurchase != null ? countOfPurchase.hashCode() : 0);
-		result = 31 * result + (priceOfPurchase != null ? priceOfPurchase.hashCode() : 0);
+		result = 31 * result + (date != null ? date.hashCode() : 0);
+		result = 31 * result + (count != null ? count.hashCode() : 0);
+		result = 31 * result + (totalPrice != null ? totalPrice.hashCode() : 0);
 		return result;
 	}
 
@@ -132,9 +129,9 @@ public class Purchase {
 				"id=" + id +
 				", user=" + user +
 				", product=" + product +
-				", dateOfPurchase=" + dateOfPurchase +
-				", priceOfPurchase=" + priceOfPurchase +
-				", countOfPurchase=" + countOfPurchase +
+				", date=" + date +
+				", totalPrice=" + totalPrice +
+				", count=" + count +
 				'}';
 	}
 }

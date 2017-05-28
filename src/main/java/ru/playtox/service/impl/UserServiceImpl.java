@@ -6,7 +6,7 @@ import ru.playtox.dao.abstr.UserDao;
 import ru.playtox.dao.impl.exceptions.MergeException;
 import ru.playtox.dao.impl.exceptions.PersistException;
 import ru.playtox.dao.impl.exceptions.RemoveException;
-import ru.playtox.model.users.User;
+import ru.playtox.model.User;
 import ru.playtox.service.abstr.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
