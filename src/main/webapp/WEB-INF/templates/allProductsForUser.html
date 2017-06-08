@@ -12,6 +12,7 @@
         <h1 class="page-header">All products</h1>
         <div class="table-responsive">
             <table class="table table-striped">
+                <tr th:text="${error}"></tr>
                 <tr>
                     <td><b>Name</b></td>
                     <td><b>Description</b></td>
@@ -26,14 +27,7 @@
                         <td th:text="${product.description}">Description</td>
                         <td th:text="${product.price}">Price</td>
                         <td th:text="${product.count}">Count</td>
-                        <td>
-                            <select th:name="number">
-                                <!--<option th:text="0"></option>-->
-                                <option th:each="i : ${#numbers.sequence(0, product.count)}" th:value="${i}"
-                                        th:text="${i}">number
-                                </option>
-                            </select>
-                        </td>
+                        <td><input type="number" th:name="count" value="0" required="required"/></td>
                         <td>
                             <button type="submit" class="btn btn-lg btn-success">Buy</button>
                         </td>

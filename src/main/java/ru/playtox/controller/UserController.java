@@ -38,18 +38,32 @@ public class UserController {
 	}
 
 	@PostMapping(value = {"/products/{id}/buy"})
-	public String buyProduct(@RequestParam(value = "number", required = false) String number, @PathVariable("id") Long id) {
-		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		Integer numbers = Integer.valueOf(number);
+	public synchronized ModelAndView buyProduct(
+			@RequestParam(value = "count", required = false) Integer count,
+			@PathVariable("id") Long id) {
 
-		if (numbers > 0) {
+		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		if (count > 0) {
 			Product product = productService.getProductById(id);
-			product.setCount(product.getCount() - numbers);
-			productService.updateProduct(product);
-			BigDecimal total = product.getPrice().multiply(new BigDecimal(numbers));
-			purchaseService.addPurchase(
-					new Purchase(user, product, LocalDate.now(Clock.systemUTC()), total, numbers));
+
+			if (count < product.getCount()) {
+
+				product.setCount(product.getCount() - count);
+				productService.updateProduct(product);
+
+				BigDecimal total = product.getPrice().multiply(new BigDecimal(count));
+				purchaseService.addPurchase(
+						new Purchase(user, product, LocalDate.now(Clock.systemUTC()), total, count));
+			} else {
+				ModelAndView modelAndView = new ModelAndView("allProductsForUser");
+				modelAndView.addObject("products", productService.getAllProduct());
+				modelAndView.addObject(
+						"error",
+						product.getName() + " In stock " + product.getCount() + " it's necessary " + count);
+				return modelAndView;
+			}
 		}
-		return "redirect:/user/products";
+		return getAllProduct();
 	}
 }
